@@ -22,6 +22,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://bharathkowshik.vercel.app'),
   title: 'Bharath Kowshik — Software Engineer | AI Builder | IoT Innovator',
   description:
     'Personal portfolio of Bharath Kowshik Ullangula — a multidisciplinary Software Engineer, AI Builder, IoT Innovator, and Creative Technologist. Building intelligent products that solve real-world problems.',
