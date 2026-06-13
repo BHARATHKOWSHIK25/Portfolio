@@ -131,24 +131,9 @@ export default function Services() {
       </div>
 
       <style>{`
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
           .services-row {
-            grid-template-columns: 50px 1fr !important;
-            grid-template-rows: auto auto;
-            gap: 1rem !important;
-            padding: 1.75rem 0 !important;
-          }
-          .services-row > p {
-            grid-column: 1 / -1;
-            padding-top: 0 !important;
-          }
-          .services-row > h3 {
-            padding-top: 0 !important;
-          }
-        }
-        @media (max-width: 768px) and (min-width: 641px) {
-          .services-row {
-            grid-template-columns: 80px 1fr !important;
+            grid-template-columns: 60px 1fr !important;
             grid-template-rows: auto auto;
           }
           .services-row > p {

@@ -19,10 +19,9 @@ export default function About() {
     <section id="about" style={{ padding: '8rem 0' }}>
       <div className="section-container">
         <div
-          className="about-grid"
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
             gap: '4rem',
             alignItems: 'center',
           }}
@@ -131,15 +130,13 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            style={{ display: 'flex', justifyContent: 'center', padding: '2rem 1rem 2rem' }}
+            style={{ display: 'flex', justifyContent: 'center' }}
           >
             <div
-              className="about-image-wrap"
               style={{
                 position: 'relative',
-                width: '100%',
-                maxWidth: 420,
-                aspectRatio: '420 / 494',
+                width: 420,
+                height: 494,
               }}
             >
               {/* Glow ring */}
@@ -171,18 +168,18 @@ export default function About() {
                 />
               </div>
 
-              {/* Floating badge — bottom right, clamped so it never overflows */}
+              {/* Floating badge */}
               <motion.div
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
                 style={{
                   position: 'absolute',
-                  bottom: 12,
-                  right: 12,
+                  bottom: -20,
+                  right: -20,
                   background: 'var(--surface)',
                   border: '1px solid var(--border)',
                   borderRadius: 12,
-                  padding: '0.65rem 0.85rem',
+                  padding: '0.75rem 1rem',
                   zIndex: 2,
                   boxShadow: '0 8px 32px rgba(0,0,0,0.4)',
                 }}
@@ -191,7 +188,7 @@ export default function About() {
                   style={{
                     fontFamily: 'var(--font-display)',
                     fontWeight: 700,
-                    fontSize: '0.85rem',
+                    fontSize: '0.9rem',
                     color: 'var(--text-primary)',
                   }}
                 >
@@ -199,7 +196,7 @@ export default function About() {
                 </div>
                 <div
                   style={{
-                    fontSize: '0.72rem',
+                    fontSize: '0.75rem',
                     color: 'var(--text-secondary)',
                     marginTop: '0.15rem',
                   }}
@@ -208,23 +205,23 @@ export default function About() {
                 </div>
               </motion.div>
 
-              {/* Top badge — clamped inside frame */}
+              {/* Top badge */}
               <motion.div
                 animate={{ y: [0, 6, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
                 style={{
                   position: 'absolute',
-                  top: 12,
-                  left: 12,
+                  top: -16,
+                  left: -16,
                   background: '#0a0a0a',
                   border: '1px solid rgba(0,229,255,0.3)',
                   borderRadius: 10,
-                  padding: '0.45rem 0.75rem',
+                  padding: '0.5rem 0.85rem',
                   zIndex: 2,
                   backdropFilter: 'blur(10px)',
                 }}
               >
-                <div style={{ fontSize: '0.78rem', color: '#00E5FF', fontWeight: 600 }}>
+                <div style={{ fontSize: '0.8rem', color: '#00E5FF', fontWeight: 600 }}>
                   ⚡ AI · IoT · Full Stack
                 </div>
               </motion.div>
