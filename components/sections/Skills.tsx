@@ -337,16 +337,13 @@ export default function Skills() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             style={{
-              display: 'flex',
-              flexWrap: 'wrap',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(110px, 1fr))',
               gap: '1rem',
-              justifyContent: 'center',
             }}
           >
             {activeCategory.skills.map((skill, i) => (
-              <div key={skill} style={{ width: 130 }}>
-                <SkillCard skill={skill} index={i} />
-              </div>
+              <SkillCard key={skill} skill={skill} index={i} />
             ))}
           </motion.div>
         </AnimatePresence>
