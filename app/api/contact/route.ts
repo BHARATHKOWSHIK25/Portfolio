@@ -25,8 +25,11 @@ export async function POST(request: Request) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
+        // NOTE: Using onboarding@resend.dev (Resend test sender).
+        // This can ONLY deliver to your verified Resend account email.
+        // To receive from anyone, add & verify a custom domain at resend.com/domains
         from: 'Portfolio Contact <onboarding@resend.dev>',
-        to: [process.env.CONTACT_EMAIL || 'bharathkowshik25@gmail.com'],
+        to: ['bharathkowshik25@gmail.com'], // must match your Resend account email
         reply_to: email,
         subject: `[Portfolio] ${subject} — from ${name}`,
         html: `
