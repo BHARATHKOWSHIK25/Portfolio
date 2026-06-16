@@ -21,10 +21,9 @@ export const personalInfo = {
     "Future Founder",
   ],
   about: [
-    "I'm Bharath Kowshik, a 3rd year Computer Science student with a builder's mindset — I don't just study technology, I create with it. I've built an agriculture marketplace app that connects farmers directly to consumers, an AI-powered home maintenance assistant that guides users through repairs conversationally, and an IoT sleep tracker that monitors sleep quality through hardware sensors and a live dashboard.",
-    "I work with AI tools daily to build faster, prototype smarter, and turn ideas into real products — I've completed certifications in AI Agents through Google and Kaggle and I'm constantly experimenting with new models, APIs, and agentic workflows.",
-    "Beyond code, I'm a creative — I edit cinematic short films, design event posters and banners, and organized INOVESTA, a college tech event with 200+ participants. I believe the best builders are also storytellers, and that creativity is what separates a good product from a great one.",
-    "I'm actively building, learning, and growing every single day. I'm open to internship opportunities where I can contribute meaningfully and become a stronger engineer. If you're looking for someone who ships, creates, and never stops building — let's connect.",
+    "I'm Bharath Kowshik, a 3rd-year Computer Science student passionate about building real-world solutions with AI, IoT, and software development. I've developed projects including an agriculture marketplace connecting farmers to consumers, an AI-powered home maintenance assistant, and an IoT-based sleep tracking system with real-time analytics.",
+    "I actively leverage AI tools, APIs, and agentic workflows to prototype and ship products faster. Alongside development, I enjoy creative storytelling through video editing and graphic design, and I've led tech initiatives such as INOVESTA.",
+    "I'm driven by curiosity, continuous learning, and the desire to turn ideas into impactful products. Currently seeking opportunities to grow as a software engineer while contributing to meaningful projects.",
   ],
   stats: [
     { number: "3+", label: "Live Projects on GitHub" },
