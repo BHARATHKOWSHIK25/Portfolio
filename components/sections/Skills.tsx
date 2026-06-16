@@ -2,6 +2,20 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+
+const EASE_EXPO = [0.16, 1, 0.3, 1] as const;
+
+const headingReveal = {
+  hidden: { opacity: 0, y: 80, filter: 'blur(12px)', skewY: 3 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    skewY: 0,
+    transition: { duration: 1, ease: EASE_EXPO },
+  },
+};
+
 import {
   Code, Monitor, Server, Smartphone, Brain, Cpu, Wrench, Palette,
 } from 'lucide-react';
@@ -279,9 +293,18 @@ export default function Skills() {
           }}>
             Expertise
           </p>
-          <h2 className="section-heading" style={{ marginBottom: '0.75rem' }}>
-            Tech Stack
-          </h2>
+          <div style={{ overflow: 'hidden' }}>
+            <motion.h2
+              variants={headingReveal}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-80px' }}
+              className="section-heading"
+              style={{ marginBottom: '0.75rem' }}
+            >
+              Tech Stack
+            </motion.h2>
+          </div>
           <p className="section-subheading">Tools and technologies I build with.</p>
         </motion.div>
 

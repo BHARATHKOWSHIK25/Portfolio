@@ -21,15 +21,16 @@ export const personalInfo = {
     "Future Founder",
   ],
   about: [
-    "I'm Bharath Kowshik, A B.Tech CSE student at KKR & KSR Institute of Technology and Sciences (2024–2028), passionate about building products that sit at the intersection of AI, IoT, and software engineering.",
-    "From building an AI-powered home maintenance assistant to designing IoT sleep monitoring systems, I love turning complex problems into elegant solutions. Beyond engineering, I'm a video editor, banner designer, and aspiring startup founder.",
-    "I'm driven by one goal: to build technology that makes a real difference — whether it's for farmers, families, or future industries.",
+    "I'm Bharath Kowshik, a 3rd year Computer Science student with a builder's mindset — I don't just study technology, I create with it. I've built an agriculture marketplace app that connects farmers directly to consumers, an AI-powered home maintenance assistant that guides users through repairs conversationally, and an IoT sleep tracker that monitors sleep quality through hardware sensors and a live dashboard.",
+    "I work with AI tools daily to build faster, prototype smarter, and turn ideas into real products — I've completed certifications in AI Agents through Google and Kaggle and I'm constantly experimenting with new models, APIs, and agentic workflows.",
+    "Beyond code, I'm a creative — I edit cinematic short films, design event posters and banners, and organized INOVESTA, a college tech event with 200+ participants. I believe the best builders are also storytellers, and that creativity is what separates a good product from a great one.",
+    "I'm actively building, learning, and growing every single day. I'm open to internship opportunities where I can contribute meaningfully and become a stronger engineer. If you're looking for someone who ships, creates, and never stops building — let's connect.",
   ],
   stats: [
-    { number: "4+", label: "Projects Built" },
-    { number: "5+", label: "Certifications" },
-    { number: "2+", label: "Events Organized" },
-    { number: "3+", label: "Tech Domains" },
+    { number: "3+", label: "Live Projects on GitHub" },
+    { number: "5+", label: "Relevant Certifications" },
+    { number: "2+", label: "Technical Events Organised" },
+    { number: "4+", label: "Tech Domains" },
   ],
 };
 
@@ -61,8 +62,8 @@ export const projects = [
     id: 1,
     title: "Farm2Buyer",
     description:
-      "An agriculture marketplace that directly connects farmers with consumers, removing middlemen and ensuring fair pricing for both sides.",
-    tags: ["Flutter", "Firebase", "Dart"],
+      "Built a Flutter + Firebase mobile app that eliminates middlemen in farm-to-consumer sales. Implemented real-time price listing, buyer-seller chat, and location-based product filtering. Designed for farmers in rural regions to directly reach buyers and get fair pricing.",
+    tags: ["Flutter", "Firebase", "Dart", "Real-time Database"],
     category: "Mobile App",
     image: "/Projects_images/FARM2BUYER.png",
     featured: true,
@@ -74,8 +75,8 @@ export const projects = [
     id: 2,
     title: "Sleep Mate",
     description:
-      "An IoT-based sleep monitoring system using Arduino sensors to track, analyze, and report sleep quality in real time.",
-    tags: ["Arduino", "Sensors", "Python", "IoT"],
+      "Designed and built a hardware + software IoT system that monitors sleep quality using sensors. Tracks movement, environment data, and sleep duration. Sends real-time data to a dashboard where users can view sleep patterns and improvement suggestions.",
+    tags: ["IoT", "Hardware", "Arduino", "Sensors", "Dashboard", "Python"],
     category: "IoT System",
     image: "/Projects_images/SLEEPMATE.png",
     featured: false,
@@ -87,8 +88,8 @@ export const projects = [
     id: 3,
     title: "HOMEFIX AI",
     description:
-      "An AI-powered home maintenance assistant that uses LLM-based AI agents to diagnose household problems and suggest solutions intelligently.",
-    tags: ["Python", "AI Agents", "LLMs", "Prompt Engineering"],
+      "Developed an AI-powered assistant that helps homeowners diagnose and fix common household problems. Users describe an issue and the assistant provides step-by-step repair guidance, tool recommendations, and cost estimates. Built using LLM APIs with a clean conversational interface.",
+    tags: ["AI", "LLM", "Python", "Conversational UI", "Prompt Engineering"],
     category: "AI Application",
     image: "/Projects_images/HOMEFIX_AI.png",
     featured: false,
@@ -100,8 +101,8 @@ export const projects = [
     id: 4,
     title: "QuickServe",
     description:
-      "A smart service and product management platform designed to streamline workflows and improve operational efficiency.",
-    tags: ["React", "Node.js", "Firebase"],
+      "Built autonomous AI agents capable of performing multi-step tasks without manual intervention. Agents can browse, retrieve information, make decisions, and produce outputs — demonstrating practical understanding of agentic AI workflows.",
+    tags: ["AI Agents", "Automation", "LLM", "Python"],
     category: "Software Product",
     image: "/Projects_images/QUICK_SERVE.png",
     featured: false,

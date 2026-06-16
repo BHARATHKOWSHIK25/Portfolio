@@ -5,6 +5,20 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Play, Eye, Sparkles, X, ExternalLink, Film, Star } from 'lucide-react';
 import { creativeItems } from '@/lib/data';
 
+const EASE_EXPO = [0.16, 1, 0.3, 1] as const;
+
+const headingReveal = {
+  hidden: { opacity: 0, y: 80, filter: 'blur(12px)', skewY: 3 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    skewY: 0,
+    transition: { duration: 1, ease: EASE_EXPO },
+  },
+};
+
+
 const tabs = ['All', 'Video Edits', 'Short Film', 'Banner Design', 'Websites'];
 
 function CreativeCard({ item, onClick, index }: { item: any; onClick: () => void; index: number }) {
@@ -358,11 +372,31 @@ export default function Creative() {
           >
             Creative Work
           </p>
-          <h2 className="section-heading" style={{ marginBottom: '0.75rem' }}>
-            Beyond Code
-          </h2>
-          <p className="section-subheading">
+          <div style={{ overflow: 'hidden' }}>
+            <motion.h2
+              variants={headingReveal}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-80px' }}
+              className="section-heading"
+              style={{ marginBottom: '0.75rem' }}
+            >
+              Beyond Code
+            </motion.h2>
+          </div>
+          <p className="section-subheading" style={{ marginBottom: '0.5rem' }}>
             Cinematic edits, event banners, and digital experiences.
+          </p>
+          <p
+            style={{
+              color: 'var(--text-secondary)',
+              fontSize: '0.95rem',
+              lineHeight: 1.7,
+              maxWidth: '560px',
+              marginTop: '0.25rem',
+            }}
+          >
+            Beyond code — I create cinematic videos and event creatives. A builder in every medium.
           </p>
         </motion.div>
 

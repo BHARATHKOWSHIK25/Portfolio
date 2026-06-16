@@ -78,6 +78,56 @@ export default function About() {
               </motion.p>
             ))}
 
+            {/* Currently Building */}
+            <motion.div
+              custom={personalInfo.about.length + 2}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-80px' }}
+              style={{ marginTop: '1.5rem' }}
+            >
+              <div
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.6rem',
+                  background: 'rgba(0, 229, 255, 0.07)',
+                  border: '1px solid rgba(0, 229, 255, 0.25)',
+                  borderRadius: '100px',
+                  padding: '0.45rem 1rem',
+                }}
+              >
+                <span
+                  style={{
+                    width: 8,
+                    height: 8,
+                    borderRadius: '50%',
+                    background: 'var(--accent)',
+                    display: 'inline-block',
+                    animation: 'pulse-soft 2s ease-in-out infinite',
+                    flexShrink: 0,
+                  }}
+                />
+                <span
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '0.875rem',
+                    color: 'var(--accent)',
+                    fontWeight: 500,
+                  }}
+                >
+                  Currently building:{' '}
+                  <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>
+                    Smart Vehicle Health Monitoring System
+                  </span>
+                  <span style={{ color: 'var(--text-secondary)', fontWeight: 400 }}>
+                    {' '}— An AI & IoT based vehicle health monitoring and predictive maintenance system.
+                  </span>
+                </span>
+              </div>
+            </motion.div>
+
             {/* Stats */}
             <motion.div
               custom={5}

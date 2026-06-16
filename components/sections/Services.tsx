@@ -2,6 +2,29 @@
 
 import { motion } from 'framer-motion';
 
+const EASE_EXPO = [0.16, 1, 0.3, 1] as const;
+
+const headingReveal = {
+  hidden: { opacity: 0, y: 80, filter: 'blur(12px)', skewY: 3 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    skewY: 0,
+    transition: { duration: 1, ease: EASE_EXPO },
+  },
+};
+
+const rowVariants = {
+  hidden: { opacity: 0, y: 32, filter: 'blur(4px)' },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    transition: { duration: 0.65, ease: EASE_EXPO, delay: i * 0.1 },
+  }),
+};
+
 const services = [
   {
     number: '01',
@@ -40,15 +63,13 @@ export default function Services() {
       }}
     >
       <div className="section-container">
-        {/* Large heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          style={{ marginBottom: '4rem' }}
-        >
-          <h2
+        {/* Large heading — dramatic scroll reveal */}
+        <div style={{ overflow: 'hidden', marginBottom: '4rem' }}>
+          <motion.h2
+            variants={headingReveal}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-80px' }}
             style={{
               fontFamily: 'var(--font-display)',
               fontSize: 'clamp(3.5rem, 12vw, 9rem)',
@@ -60,18 +81,19 @@ export default function Services() {
             }}
           >
             SERVICES
-          </h2>
-        </motion.div>
+          </motion.h2>
+        </div>
 
         {/* List */}
         <div>
           {services.map((s, i) => (
             <motion.div
               key={s.number}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
+              custom={i}
+              variants={rowVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-60px' }}
               style={{
                 display: 'grid',
                 gridTemplateColumns: '110px 1fr 1fr',

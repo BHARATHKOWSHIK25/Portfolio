@@ -5,6 +5,20 @@ import { ArrowUpRight, Mail, MessageCircle, GraduationCap } from 'lucide-react';
 import { LinkedinIcon, GithubIcon, TwitterIcon, InstagramIcon } from '../ui/BrandIcons';
 import { personalInfo } from '@/lib/data';
 
+const EASE_EXPO = [0.16, 1, 0.3, 1] as const;
+
+const headingReveal = {
+  hidden: { opacity: 0, y: 80, filter: 'blur(12px)', skewY: 3 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    skewY: 0,
+    transition: { duration: 1, ease: EASE_EXPO },
+  },
+};
+
+
 const channels = [
   {
     id: 'email',
@@ -89,18 +103,26 @@ export default function Contact() {
           }}>
             Let's Connect
           </p>
-          <h2 style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(2.8rem, 10vw, 8rem)',
-            fontWeight: 800,
-            letterSpacing: '-0.04em',
-            lineHeight: 0.92,
-            color: 'var(--text-primary)',
-            textTransform: 'uppercase',
-            marginBottom: '1.5rem',
-          }}>
-            GET IN TOUCH
-          </h2>
+          <div style={{ overflow: 'hidden' }}>
+            <motion.h2
+              variants={headingReveal}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-80px' }}
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: 'clamp(2.8rem, 10vw, 8rem)',
+                fontWeight: 800,
+                letterSpacing: '-0.04em',
+                lineHeight: 0.92,
+                color: 'var(--text-primary)',
+                textTransform: 'uppercase',
+                marginBottom: '1.5rem',
+              }}
+            >
+              GET IN TOUCH
+            </motion.h2>
+          </div>
           <p style={{
             fontSize: '1rem',
             color: 'var(--text-secondary)',
