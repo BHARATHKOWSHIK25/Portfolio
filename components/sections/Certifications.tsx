@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Cpu, Code, Layers, Brain, Zap, Award, X, ZoomIn, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Cpu, Code, Layers, Brain, Zap, Award, X, ZoomIn, ChevronLeft, ChevronRight, ExternalLink, Star } from 'lucide-react';
 import { certifications } from '@/lib/data';
 
 const EASE_EXPO = [0.16, 1, 0.3, 1] as const;
@@ -175,6 +175,9 @@ export default function Certifications() {
             </motion.div>
           ))}
         </div>
+
+        {/* ── Google Developers Profile Card ── */}
+        <DeveloperProfileHighlight />
       </div>
 
       {/* ── Lightbox Modal ── */}
@@ -335,5 +338,152 @@ export default function Certifications() {
         .card:hover .cert-zoom { opacity: 1 !important; }
       `}</style>
     </section>
+  );
+}
+
+// ── Special highlighted Developer Profile Card ──────────────────────────────────────
+function DeveloperProfileHighlight() {
+  return (
+    <motion.a
+      href="https://me.developers.google.com/u/bharathkowshik25"
+      target="_blank"
+      rel="noopener noreferrer"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      whileHover={{ 
+        scale: 1.015,
+        boxShadow: '0 20px 50px rgba(66, 133, 244, 0.15)',
+        borderColor: 'rgba(66, 133, 244, 0.4)'
+      }}
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        borderRadius: '20px',
+        overflow: 'hidden',
+        border: '1px solid rgba(66, 133, 244, 0.25)',
+        background: 'rgba(17, 17, 20, 0.8)',
+        backdropFilter: 'blur(10px)',
+        textDecoration: 'none',
+        cursor: 'pointer',
+        position: 'relative',
+        marginTop: '4rem',
+        boxShadow: '0 10px 40px rgba(66, 133, 244, 0.08)',
+      }}
+      className="noise"
+    >
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: '1.2fr 1fr',
+        minHeight: 240,
+        position: 'relative',
+      }}>
+        {/* Info */}
+        <div style={{
+          padding: '2.5rem',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          gap: '1rem',
+          zIndex: 10,
+        }}>
+          {/* Badge */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <div style={{
+              display: 'flex', alignItems: 'center', gap: '0.4rem',
+              background: 'rgba(66, 133, 244, 0.1)',
+              border: '1px solid rgba(66, 133, 244, 0.3)',
+              borderRadius: '100px',
+              padding: '0.3rem 0.8rem',
+            }}>
+              <Star size={12} style={{ color: '#4285F4' }} />
+              <span style={{ 
+                fontSize: '0.72rem', 
+                fontWeight: 800, 
+                letterSpacing: '0.08em', 
+                textTransform: 'uppercase',
+                background: 'linear-gradient(90deg, #4285F4, #EA4335, #FBBC04, #34A853)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                display: 'inline-block'
+              }}>
+                Google Developer Profile
+              </span>
+            </div>
+          </div>
+
+          <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.5rem' }}>
+              <Code size={22} style={{ color: '#34A853' }} />
+              <h3 style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: '1.7rem',
+                fontWeight: 800,
+                color: 'var(--text-primary)',
+                lineHeight: 1.15,
+              }}>
+                Bharath Kowshik Ullangula
+              </h3>
+            </div>
+            <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '0.5rem', maxWidth: '600px' }}>
+              Check out my official Google Developers Profile featuring my badges, activity, and contributions across Google technologies and communities.
+            </p>
+          </div>
+
+          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+            <span className="badge" style={{ fontSize: '0.72rem', color: '#4285F4', border: '1px solid rgba(66,133,244,0.3)', borderRadius: '100px', padding: '0.25rem 0.65rem', background: 'rgba(66,133,244,0.05)' }}>Google Developers</span>
+            <span className="badge" style={{ fontSize: '0.72rem', color: '#EA4335', border: '1px solid rgba(234,67,53,0.3)', borderRadius: '100px', padding: '0.25rem 0.65rem', background: 'rgba(234,67,53,0.05)' }}>Badges</span>
+            <span className="badge" style={{ fontSize: '0.72rem', color: '#FBBC04', border: '1px solid rgba(251,188,4,0.3)', borderRadius: '100px', padding: '0.25rem 0.65rem', background: 'rgba(251,188,4,0.05)' }}>Community</span>
+          </div>
+
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+            background: 'linear-gradient(90deg, rgba(66,133,244,0.15), rgba(234,67,53,0.15), rgba(251,188,4,0.15), rgba(52,168,83,0.15))',
+            border: '1px solid rgba(255,255,255,0.1)',
+            backdropFilter: 'blur(10px)',
+            color: 'white',
+            padding: '0.6rem 1.4rem',
+            borderRadius: '100px',
+            fontSize: '0.85rem',
+            fontWeight: 700,
+            width: 'fit-content',
+            boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
+            marginTop: '0.5rem',
+          }}>
+            <ExternalLink size={14} />
+            <span>View Profile</span>
+          </div>
+        </div>
+
+        {/* Background Visual & Logo */}
+        <div style={{
+          position: 'relative',
+          background: 'radial-gradient(circle at center right, rgba(66,133,244,0.04) 0%, transparent 80%)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '2rem',
+        }}>
+          <div style={{
+            position: 'relative',
+            width: '100%',
+            height: '100%',
+          }}>
+            <img
+              src="/certificates/GDP.png"
+              alt="Google Developer Program"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain',
+                objectPosition: 'center',
+                filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.4))',
+              }}
+            />
+          </div>
+        </div>
+      </div>
+    </motion.a>
   );
 }

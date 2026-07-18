@@ -55,7 +55,7 @@ export default function About() {
               className="section-heading"
               style={{ marginBottom: '1.5rem' }}
             >
-              Driven by curiosity,{' '}
+              Engineering with purpose,{' '}
               <span className="gradient-text">built for impact.</span>
             </motion.h2>
 
@@ -242,7 +242,7 @@ export default function About() {
                     color: 'var(--text-primary)',
                   }}
                 >
-                  🚀 Future Founder
+                  🚀 Engineer & Builder
                 </div>
                 <div
                   style={{

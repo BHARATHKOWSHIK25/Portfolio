@@ -295,41 +295,41 @@ export default function Projects() {
       <div className="relative z-10 w-full flex flex-col items-center" style={{ margin: '0 auto', maxWidth: '1200px' }}>
 
         {/* ── Section Header ── */}
-        <div className="pb-16 w-full flex flex-col items-center">
+        <div className="pb-10 w-full flex flex-col items-center">
           <motion.p
             variants={headerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-[#00E5FF] text-[0.8rem] font-semibold tracking-[0.2em] uppercase mb-4 text-center"
+            className="text-[#00E5FF] text-[0.85rem] font-semibold tracking-[0.2em] uppercase mb-2 text-center"
           >
             Selected Work
           </motion.p>
 
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1, ease: EASE_OUT_EXPO }}
+            className="text-white/60 text-[0.95rem] tracking-wide text-center mb-6 relative z-20"
+          >
+            Click any card to explore the project
+          </motion.p>
+
           <motion.div
             style={{ opacity: headingOpacity }}
-            className="overflow-hidden"
+            className="w-full flex justify-center overflow-hidden"
           >
             <motion.h2
               variants={headerVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="font-display text-[clamp(4rem,15vw,12rem)] font-extrabold tracking-[-0.05em] leading-[0.85] text-white/5 select-none whitespace-nowrap text-center"
+              className="font-display text-[clamp(2.5rem,13vw,9rem)] font-extrabold tracking-normal leading-[0.85] text-white/5 select-none whitespace-nowrap text-center"
             >
               PROJECTS
             </motion.h2>
           </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2, ease: EASE_OUT_EXPO }}
-            className="text-white/35 text-sm tracking-wide text-center max-w-sm mt-2"
-          >
-            Click any card to explore the project
-          </motion.p>
         </div>
 
         {/* ── Masonry Grid ── */}

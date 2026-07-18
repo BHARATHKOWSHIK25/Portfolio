@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+/* Fonts loaded via next/font/google — see app/layout.tsx */
 @import "tailwindcss";
 
 :root {
@@ -12,8 +12,9 @@
   --accent-secondary: #FF6B35;
   --gradient: linear-gradient(135deg, #00E5FF 0%, #FF6B35 100%);
   --radius: 10px;
-  --font-display: 'Syne', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
+  /* Syne — headings only | Inter — body/UI text */
+  --font-display: 'Syne', system-ui, sans-serif;
+  --font-body:    'Inter', system-ui, sans-serif;
 }
 
 * {
@@ -36,6 +37,9 @@ body {
   background-color: var(--bg);
   color: var(--text-primary);
   font-family: var(--font-body);
+  font-size: 1rem;           /* Inter reads perfectly at 16px */
+  line-height: 1.6;
+  letter-spacing: -0.011em;  /* Inter tight tracking looks premium */
   overflow-x: hidden;
   cursor: none;
 }
@@ -56,29 +60,63 @@ body::before {
 }
 
 @keyframes grain {
-  0%, 100% { transform: translate(0, 0); }
-  10% { transform: translate(-5%, -10%); }
-  20% { transform: translate(-15%, 5%); }
-  30% { transform: translate(7%, -25%); }
-  40% { transform: translate(-5%, 25%); }
-  50% { transform: translate(-15%, 10%); }
-  60% { transform: translate(15%, 0%); }
-  70% { transform: translate(0%, 15%); }
-  80% { transform: translate(3%, 35%); }
-  90% { transform: translate(-10%, 10%); }
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  10% {
+    transform: translate(-5%, -10%);
+  }
+
+  20% {
+    transform: translate(-15%, 5%);
+  }
+
+  30% {
+    transform: translate(7%, -25%);
+  }
+
+  40% {
+    transform: translate(-5%, 25%);
+  }
+
+  50% {
+    transform: translate(-15%, 10%);
+  }
+
+  60% {
+    transform: translate(15%, 0%);
+  }
+
+  70% {
+    transform: translate(0%, 15%);
+  }
+
+  80% {
+    transform: translate(3%, 35%);
+  }
+
+  90% {
+    transform: translate(-10%, 10%);
+  }
 }
 
 /* ---- Custom Scrollbar ---- */
 ::-webkit-scrollbar {
   width: 4px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--bg);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--accent);
   border-radius: 2px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-secondary);
 }
@@ -127,10 +165,11 @@ body::before {
 
 .section-heading {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2rem, 5vw, 3.75rem);
   font-weight: 800;
   color: var(--text-primary);
   line-height: 1.1;
+  letter-spacing: -0.025em;  /* Syne looks sharpest with moderate tight tracking */
 }
 
 .section-subheading {
@@ -138,6 +177,8 @@ body::before {
   color: var(--text-secondary);
   font-size: 1.1rem;
   font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: -0.006em;
 }
 
 /* ---- Card Base ---- */
@@ -247,28 +288,66 @@ body::before {
 
 /* ---- Animations ---- */
 @keyframes pulse-soft {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.7; transform: scale(0.97); }
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(0.97);
+  }
 }
 
 @keyframes breathe {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.05); }
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 @keyframes rotate-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.animate-pulse-soft { animation: pulse-soft 2s ease-in-out infinite; }
-.animate-breathe { animation: breathe 4s ease-in-out infinite; }
-.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+.animate-breathe {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
 
 /* ---- Cursor ---- */
 .custom-cursor {
@@ -291,8 +370,13 @@ body::before {
 
 /* ---- Mobile overrides ---- */
 @media (max-width: 768px) {
-  body { cursor: auto; }
-  .custom-cursor { display: none; }
+  body {
+    cursor: auto;
+  }
+
+  .custom-cursor {
+    display: none;
+  }
 }
 
 /* ---- Page Loader ---- */
@@ -336,12 +420,17 @@ body.keyboard-navigation * {
   cursor: auto !important;
 }
 
-input, textarea {
+input,
+textarea {
   cursor: none;
 }
 
 @media (max-width: 768px) {
-  input, textarea { cursor: auto; }
+
+  input,
+  textarea {
+    cursor: auto;
+  }
 }
 
 /* ── Performance / GPU hints ─────────────────────────────── */
@@ -359,6 +448,7 @@ input, textarea {
     transform: translateY(40px);
     filter: blur(6px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -372,6 +462,7 @@ input, textarea {
     transform: scale(0.94);
     filter: blur(4px);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -384,6 +475,7 @@ input, textarea {
     opacity: 0;
     transform: translateX(-32px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -391,18 +483,21 @@ input, textarea {
 }
 
 @keyframes shimmer {
-  0%   { background-position: -200% center; }
-  100% { background-position:  200% center; }
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
 }
 
 /* ── Shimmer utility for skeleton / hover glows ─────────── */
 .shimmer-bg {
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(0, 229, 255, 0.06) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(0, 229, 255, 0.06) 50%,
+      transparent 100%);
   background-size: 200% 100%;
   animation: shimmer 2.5s ease-in-out infinite;
 }
@@ -411,8 +506,8 @@ input, textarea {
 .card {
   transition:
     border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow   0.35s cubic-bezier(0.16, 1, 0.3, 1),
-    transform    0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 /* ── Section fade-in helper (used by Framer Motion variants) */

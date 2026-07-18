@@ -130,7 +130,7 @@ export default function Contact() {
             margin: '0 auto',
             lineHeight: 1.6,
           }}>
-            Open to internships, collaborations, and creative projects. Pick any channel below — I'll get back to you fast.
+            Available for internships, freelance collaborations, and technical projects. Choose a channel below — I typically respond within 24 hours.
           </p>
         </motion.div>
 
@@ -267,7 +267,7 @@ export default function Contact() {
             textTransform: 'uppercase',
             color: 'var(--text-secondary)',
           }}>
-            © 2025{' '}
+            © 2025–{new Date().getFullYear()}{' '}
             <span className="gradient-text" style={{ fontWeight: 700 }}>
               BHARATH KOWSHIK
             </span>
