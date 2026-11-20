@@ -242,7 +242,7 @@ export default function About() {
                     color: 'var(--text-primary)',
                   }}
                 >
-                  🚀 Engineer & Builder
+                  🚀 Student & Builder
                 </div>
                 <div
                   style={{
