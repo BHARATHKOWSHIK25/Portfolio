@@ -210,7 +210,7 @@ export default function About() {
                 }}
               >
                 <Image
-                  src="/kowshik.jpg"
+                  src="/Domain.jpg"
                   alt="Bharath Kowshik"
                   fill
                   style={{ objectFit: 'cover', objectPosition: 'center' }}
